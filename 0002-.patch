@@ -1,0 +1,37 @@
+From 57b084dad1e4d02b60b7dcb293b6eeb6c97468c8 Mon Sep 17 00:00:00 2001
+From: oimzi <oimzi@daum.net>
+Date: Tue, 19 Nov 2019 17:14:01 +0900
+Subject: [PATCH 2/2] .
+
+---
+ lib/main.dart | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/lib/main.dart b/lib/main.dart
+index 4815e5e..20f17cb 100644
+--- a/lib/main.dart
++++ b/lib/main.dart
+@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
+ import 'package:learning_flutter/second_test.dart';
+ 
+ import 'AlignTest.dart';
++import 'AlignTest2.dart';
+ 
+ 
+ void main() => runApp(new MyApp());
+@@ -20,10 +21,12 @@ class Demo {
+ }
+ 
+ Demo layoutDemo = Demo('Layout Test', '/Layout Test', (context) => LayoutTest());
++Demo layoutDemo2 = Demo('Layout Test2', '/Layout Test2', (context) => LayoutTest2());
+ 
+ 
+ final List<Demo> demos = List<Demo>()
+   ..add(layoutDemo)
++  ..add(layoutDemo2)
+ ;
+ 
+ Map<String, WidgetBuilder> _buildRouterBuilder() {
+-- 
+2.21.0 (Apple Git-122)
+

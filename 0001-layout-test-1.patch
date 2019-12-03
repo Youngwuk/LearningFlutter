@@ -1,0 +1,96 @@
+From e732010165994f22c9465e2b333aa6356328628d Mon Sep 17 00:00:00 2001
+From: oimzi <oimzi@daum.net>
+Date: Tue, 12 Nov 2019 18:31:56 +0900
+Subject: [PATCH 1/2] layout test 1.
+
+---
+ lib/AlignTest.dart   | 28 ++++++++++++++++++++++++++--
+ lib/main.dart        |  6 ++++--
+ lib/second_test.dart |  8 ++++++++
+ 3 files changed, 38 insertions(+), 4 deletions(-)
+ create mode 100644 lib/second_test.dart
+
+diff --git a/lib/AlignTest.dart b/lib/AlignTest.dart
+index 4cf2c0b..9b0cb8e 100644
+--- a/lib/AlignTest.dart
++++ b/lib/AlignTest.dart
+@@ -4,8 +4,32 @@ class LayoutTest extends StatelessWidget {
+   @override
+   Widget build(BuildContext context) {
+     return Scaffold(
+-      body: Container(
+-        child: Center(child: Text("Layout Test")),
++      appBar: AppBar(
++        title: Text('my app'),
++      ),
++      body: Row(
++        crossAxisAlignment: CrossAxisAlignment.start,
++        children: <Widget>[
++          Container(
++              decoration: BoxDecoration(
++                  borderRadius: BorderRadius.circular(8.0),
++                  color: Color.fromARGB(255, 235, 220, 255)),
++              child: Padding(
++                padding: const EdgeInsets.all(8.0),
++                child: Icon(Icons.arrow_downward, color: Color.fromARGB(255, 100, 80, 255),),
++              )),
++          SizedBox(width: 15),
++          Column(
++            crossAxisAlignment: CrossAxisAlignment.start,
++            children: <Widget>[
++              Text("Income  ", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400, color: Color(0x66000000))),
++              Text(
++                "\$2548",
++                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
++              ),
++            ],
++          ),
++        ],
+       ),
+     );
+   }
+diff --git a/lib/main.dart b/lib/main.dart
+index 6c8c897..4815e5e 100644
+--- a/lib/main.dart
++++ b/lib/main.dart
+@@ -1,7 +1,9 @@
+ import 'package:flutter/material.dart';
++import 'package:learning_flutter/second_test.dart';
+ 
+ import 'AlignTest.dart';
+ 
++
+ void main() => runApp(new MyApp());
+ //void main() => callFromMain();
+ 
+@@ -17,11 +19,11 @@ class Demo {
+   Demo(this.title, this.routeName, this.buildRoute);
+ }
+ 
+-Demo canvasRecordDemo = Demo('Layout Test', '/Layout Test', (context) => LayoutTest());
++Demo layoutDemo = Demo('Layout Test', '/Layout Test', (context) => LayoutTest());
+ 
+ 
+ final List<Demo> demos = List<Demo>()
+-  ..add(canvasRecordDemo)
++  ..add(layoutDemo)
+ ;
+ 
+ Map<String, WidgetBuilder> _buildRouterBuilder() {
+diff --git a/lib/second_test.dart b/lib/second_test.dart
+new file mode 100644
+index 0000000..e8c166e
+--- /dev/null
++++ b/lib/second_test.dart
+@@ -0,0 +1,8 @@
++import 'package:flutter/material.dart';
++
++class SecondTest extends StatelessWidget {
++  @override
++  Widget build(BuildContext context) {
++    return Scaffold(body: Center(child: Text("Second Test")));
++  }
++}
+-- 
+2.21.0 (Apple Git-122)
+

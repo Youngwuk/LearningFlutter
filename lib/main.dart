@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning_flutter/photo_demo.dart';
 import 'package:learning_flutter/second_test.dart';
 
 import 'AlignTest.dart';
@@ -22,11 +23,13 @@ class Demo {
 
 Demo layoutDemo = Demo('Layout Test', '/Layout Test', (context) => LayoutTest());
 Demo layoutDemo2 = Demo('Layout Test2', '/Layout Test2', (context) => LayoutTest2());
+Demo photoDemo = Demo('Photo load', '/photo', (context) => PhotoDemo());
 
 
 final List<Demo> demos = List<Demo>()
   ..add(layoutDemo)
   ..add(layoutDemo2)
+  ..add(photoDemo)
 ;
 
 Map<String, WidgetBuilder> _buildRouterBuilder() {
