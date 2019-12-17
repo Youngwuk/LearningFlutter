@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learning_flutter/photo_demo.dart';
 import 'package:learning_flutter/second_test.dart';
+import 'package:learning_flutter/statefull_demo.dart';
 
 import 'AlignTest.dart';
 import 'AlignTest2.dart';
@@ -24,12 +25,14 @@ class Demo {
 Demo layoutDemo = Demo('Layout Test', '/Layout Test', (context) => LayoutTest());
 Demo layoutDemo2 = Demo('Layout Test2', '/Layout Test2', (context) => LayoutTest2());
 Demo photoDemo = Demo('Photo load', '/photo', (context) => PhotoDemo());
+Demo statefullDemo = Demo('StateFull test', '/statefull test', (context) => StateFullDemo());
 
 
 final List<Demo> demos = List<Demo>()
   ..add(layoutDemo)
   ..add(layoutDemo2)
   ..add(photoDemo)
+  ..add(statefullDemo)
 ;
 
 Map<String, WidgetBuilder> _buildRouterBuilder() {
